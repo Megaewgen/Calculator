@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Test {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		int num1, num2=0;
 		boolean flag = false;
 			try (Scanner scanner = new Scanner (System.in)) {
@@ -11,11 +11,15 @@ public class Test {
 				String str1 = scanner.nextLine();
 				String str2 [] = new String [4];
 				str2 = str1.split(" ");
-				 try { if (!str2[4].isEmpty()) {
-					throw new Exception ();
-				 } }
-				 catch (Exception ex) {System.out.println("Ошибка! Введите не более 2 операндов");
-				 System.exit(1);}
+				try {
+					 if (str2.length==3) { 
+				 }else {throw new Exception ();}
+				 
+				  }
+				 catch (Exception ex) {
+				 System.out.println("Ошибка! Неверный формат введенных значений");
+				 System.exit(1)
+				 ;}
 				char [] op = str2[1].toCharArray();
 				char oper = op [0];
 				String [] roman = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
